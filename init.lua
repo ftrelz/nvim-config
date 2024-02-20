@@ -1,0 +1,3 @@
+require("fred")
+require("config")
+
