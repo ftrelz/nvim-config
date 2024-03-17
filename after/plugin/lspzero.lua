@@ -12,6 +12,7 @@ lsp.ensure_installed({
 	"eslint",
 	"html",
 	"jsonls",
+    "tailwindcss",
     "tsserver",
 	"pylsp",
     "emmet_language_server"
