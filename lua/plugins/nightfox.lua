@@ -1,1 +1,1 @@
-return { "EdenEast/nightfox.nvim" }
+return { "EdenEast/nightfox.nvim", enabled = false }

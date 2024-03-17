@@ -12,22 +12,6 @@ vim.api.nvim_create_autocmd("BufLeave", {
     end
 })
 
--- vim.api.nvim_create_augroup("cppfilesgroup", { clear = true })
--- vim.api.nvim_create_autocmd("BufWritePre", {
---     group = "cppfilesgroup",
---     pattern = { "*.cpp", "*.hpp" },
---     desc = "Format on write for cpp files",
---     command = "lua vim.lsp.buf.format()"
--- })
--- 
--- vim.api.nvim_create_augroup("webfilesgroup", { clear = true })
--- vim.api.nvim_create_autocmd("BufWritePre", {
---     group = "webfilesgroup",
---     pattern = { "*.js", "*.ts", "*.jsx", "*.tsx", "*.html", "*.css", "*.scss" },
---     desc = "Format on write for js and ts files",
---     command = "lua vim.lsp.buf.format()"
--- })
-
 vim.api.nvim_create_augroup("localconfig", { clear = true })
 vim.api.nvim_create_autocmd("VimEnter", {
     group = "localconfig",

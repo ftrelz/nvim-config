@@ -12,6 +12,29 @@ dap.adapters["pwa-node"] = {
     }
 }
 
+require("dap").configurations["typescript"] = {
+    {
+        type = "pwa-node",
+        request = "launch",
+        name = "Launch file",
+        program = "${file}",
+        cwd = "${workspaceFolder}",
+        outFiles = {
+            "${workspaceFolder}/dist/**/*.js"
+        }
+    }
+}
+
+require("dap").configurations["javascript"] = {
+    {
+        type = "pwa-node",
+        request = "launch",
+        name = "Launch file",
+        program = "${file}",
+        cwd = "${workspaceFolder}"
+    }
+}
+
 vim.keymap.set('n', '<F5>', function() require('dap').continue() end, { desc = "Continue execution" })
 vim.keymap.set('n', '<F10>', function() require('dap').step_over() end, { desc = "Step over" })
 vim.keymap.set('n', '<F11>', function() require('dap').step_into() end, { desc = "Step into" })

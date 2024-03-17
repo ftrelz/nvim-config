@@ -18,7 +18,15 @@ lsp.ensure_installed({
 })
 
 -- (Optional) Configure lua language server for neovim
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls({
+    settings = {
+        Lua = {
+            completion = {
+                callSnippet = "Replace"
+            }
+        }
+    }
+}))
 require('lspconfig').tsserver.setup({
     settings = {
         typescript = {
