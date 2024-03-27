@@ -14,15 +14,15 @@ dap.adapters["pwa-node"] = {
 
 dap.configurations["typescript"] = {
     {
-        type = "pwa-node";
-        request = "launch";
-        name = "Launch";
-        program = "${workspaceFolder}/dist/${fileBasenameNoExtension}.js";
-        cwd = "${workspaceFolder}";
-        outFiles = {"${workspaceFolder}/dist/**/*.js"};
-        sourceMaps = true;
-        runtimeArgs = {"--nolazy", "--inspect-brk"};
-        runtimeExecutable = "node";
+        type = "pwa-node",
+        request = "launch",
+        name = "Launch",
+        program = "${workspaceFolder}/dist/${fileBasenameNoExtension}.js",
+        cwd = "${workspaceFolder}",
+        outFiles = {"${workspaceFolder}/dist/**/*.js"},
+        sourceMaps = true,
+        runtimeArgs = {"--nolazy", "--inspect-brk"},
+        runtimeExecutable = "node",
     }
 }
 
