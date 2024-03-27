@@ -12,26 +12,17 @@ dap.adapters["pwa-node"] = {
     }
 }
 
-require("dap").configurations["typescript"] = {
+dap.configurations["typescript"] = {
     {
-        type = "pwa-node",
-        request = "launch",
-        name = "Launch file",
-        program = "${file}",
-        cwd = "${workspaceFolder}",
-        outFiles = {
-            "${workspaceFolder}/dist/**/*.js"
-        }
-    }
-}
-
-require("dap").configurations["javascript"] = {
-    {
-        type = "pwa-node",
-        request = "launch",
-        name = "Launch file",
-        program = "${file}",
-        cwd = "${workspaceFolder}"
+        type = "pwa-node";
+        request = "launch";
+        name = "Launch";
+        program = "${workspaceFolder}/dist/${fileBasenameNoExtension}.js";
+        cwd = "${workspaceFolder}";
+        outFiles = {"${workspaceFolder}/dist/**/*.js"};
+        sourceMaps = true;
+        runtimeArgs = {"--nolazy", "--inspect-brk"};
+        runtimeExecutable = "node";
     }
 }
 
