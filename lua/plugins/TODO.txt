@@ -1,0 +1,3 @@
+LazyVim / lua / lazyvim / plugins / coding:
+- mini.ai (Better text objects)
+
