@@ -1,3 +1,8 @@
+Do I need these?
+
 LazyVim / lua / lazyvim / plugins / coding:
 - mini.ai (Better text objects)
+
+LazyVim / lua / lazyvim / plugins / editor:
+- trouble (Better diagnostics window)
 
