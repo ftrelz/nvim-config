@@ -12,6 +12,7 @@ lsp.ensure_installed({
     "eslint",
     "html",
     "jsonls",
+    "marksman",
     "tailwindcss",
     "tsserver",
     "pylsp",
@@ -141,6 +142,8 @@ lspconfig.clangd.setup({
         clangdFileStatus = true,
     },
 })
+
+lspconfig.marksman.setup({})
 
 lsp.setup()
 
