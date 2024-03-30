@@ -128,7 +128,7 @@ return {
             }
         }
     end,
-    config = function(telescope, opts)
-        telescope.load_extension("fzf")
+    config = function()
+        require("telescope").load_extension("fzf")
     end
 }
