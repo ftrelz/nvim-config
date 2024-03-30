@@ -89,6 +89,7 @@ return {
         dependencies = {
             { "hrsh7th/cmp-nvim-lsp" },
             { "williamboman/mason-lspconfig.nvim" },
+            { "folke/neodev.nvim" }
         },
         config = function()
             -- This is where all the LSP shenanigans will live
@@ -262,7 +263,8 @@ return {
                     ["clangd"] = { "c", "cpp" },
                     ["tsserver"] = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
                     ["html"] = { "html" },
-                    ["jsonls"] = { "json" }
+                    ["jsonls"] = { "json" },
+                    ["lua_ls"] = { "lua" }
                 }
             })
         end
