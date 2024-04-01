@@ -3,9 +3,9 @@ return {
     event = "VeryLazy",
     opts = {},
     keys = {
-      {
-        "<leader>up",
-        desc = "Toggle Auto Pairs",
-      },
+        {
+            "<leader>up",
+            desc = "Toggle Auto Pairs",
+        },
     },
-  }
+}
