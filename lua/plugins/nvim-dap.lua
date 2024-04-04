@@ -29,6 +29,26 @@ return {
             }
         }
 
+        dap.adapters["cppdbg"] = {
+            type = "executable",
+            id = "cppdbg",
+            command = require("mason-registry").get_package("cpptools"):get_install_path() ..
+            "/extension/debugAdapters/bin/OpenDebugAD7"
+        }
+
+        dap.configurations["c"] = {
+            {
+                name = "Launch file",
+                type = "cppdbg",
+                request = "launch",
+                program = function()
+                    return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+                end,
+                cwd = '${workspaceFolder}',
+                stopAtEntry = true,
+            }
+        }
+
         vim.keymap.set('n', '<F5>', function() require('dap').continue() end, { desc = "Continue execution" })
         vim.keymap.set('n', '<F10>', function() require('dap').step_over() end, { desc = "Step over" })
         vim.keymap.set('n', '<F11>', function() require('dap').step_into() end, { desc = "Step into" })
