@@ -80,6 +80,10 @@ return {
                     end,
                 },
             })
+        end,
+        opts = function(_, opts)
+            opts.sorting = require("cmp.config.default")().sorting
+            table.insert(opts.sorting.comparators, 1, require("clangd_extensions.cmp_scores"))
         end
     },
     {
@@ -98,13 +102,24 @@ return {
 
             --- if you want to know more about lsp-zero and mason.nvim
             --- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
-            lsp_zero.on_attach(function(_, bufnr)
+            lsp_zero.on_attach(function(client, bufnr)
                 -- see :help lsp-zero-keybindings
                 -- to learn the available actions
-                lsp_zero.default_keymaps({
-                    buffer = bufnr,
-                    preserve_mappings = false
-                })
+                if (client.name == "clangd") then
+                    lsp_zero.default_keymaps({
+                        buffer = bufnr,
+                        preserve_mappings = false,
+                        exclude = { "K" }
+                    })
+
+                    require("clangd_extensions.inlay_hints").setup_autocmd()
+                    require("clangd_extensions.inlay_hints").set_inlay_hints()
+                else
+                    lsp_zero.default_keymaps({
+                        buffer = bufnr,
+                        preserve_mappings = false
+                    })
+                end
             end)
 
             require("mason-lspconfig").setup({

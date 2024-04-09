@@ -7,7 +7,6 @@ return {
             inline = false,
         },
         ast = {
-            --These require codicons (https://github.com/microsoft/vscode-codicons)
             role_icons = {
                 type = "",
                 declaration = "",
@@ -19,7 +18,6 @@ return {
             kind_icons = {
                 Compound = "",
                 Recovery = "",
-
                 TranslationUnit = "",
                 PackExpansion = "",
                 TemplateTypeParm = "",

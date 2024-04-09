@@ -20,20 +20,36 @@ return {
                 type = "pwa-node",
                 request = "launch",
                 name = "Launch",
+                autoAttachChildProcesses = true,
+                skipFiles = { "<node_internals>/**", "**/node_modules/**" },
                 program = "${workspaceFolder}/dist/${fileBasenameNoExtension}.js",
                 cwd = "${workspaceFolder}",
                 outFiles = { "${workspaceFolder}/dist/**/*.js" },
                 sourceMaps = true,
                 runtimeArgs = { "--nolazy", "--inspect-brk" },
                 runtimeExecutable = "node",
+                smartStep = true,
+            },
+            {
+                type = "pwa-node",
+                request = "launch",
+                name = "Debug Current File (vitest)",
+                autoAttachChildProcesses = true,
+                skipFiles = { "<node_internals>/**", "**/node_modules/**" },
+                program = "${workspaceRoot}/node_modules/vitest/vitest.mjs",
+                args = { "run", "${relativeFile}" },
+                smartStep = true,
+                console = "integratedTerminal"
             }
         }
+
+        dap.configurations["typescriptreact"] = dap.configurations["typescript"]
 
         dap.adapters["cppdbg"] = {
             type = "executable",
             id = "cppdbg",
             command = require("mason-registry").get_package("cpptools"):get_install_path() ..
-            "/extension/debugAdapters/bin/OpenDebugAD7"
+                "/extension/debugAdapters/bin/OpenDebugAD7"
         }
 
         dap.configurations["c"] = {

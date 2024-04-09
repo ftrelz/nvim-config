@@ -5,7 +5,7 @@ if vim.g.neovide then
     vim.keymap.set('c', '<D-v>', '<C-R>+')      -- Paste command mode
     vim.keymap.set('i', '<D-v>', '<ESC>l"+Pli') -- Paste insert mode
 
-    vim.g.neovide_scale_factor = 1.0
+    vim.g.neovide_scale_factor = 0.9
     local change_scale_factor = function(delta)
         vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
     end
