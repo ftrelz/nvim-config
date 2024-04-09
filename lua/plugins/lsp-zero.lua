@@ -240,9 +240,7 @@ return {
                                         "configure.ac",
                                         "configure.in",
                                         "config.h.in",
-                                        "meson.build",
-                                        "meson_options.txt",
-                                        "build.ninja"
+                                        ".clang-format"
                                     )(fname) or
                                     require("lspconfig.util").root_pattern("compile_commands.json", "compile_flags.txt")(
                                         fname
