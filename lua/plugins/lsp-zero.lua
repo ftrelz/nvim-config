@@ -33,7 +33,6 @@ return {
             end
 
             local luasnip = require("luasnip")
-            -- And you can configure cmp even more, if you want to.
             local cmp = require("cmp")
 
             cmp.setup({
@@ -93,18 +92,24 @@ return {
         dependencies = {
             { "hrsh7th/cmp-nvim-lsp" },
             { "williamboman/mason-lspconfig.nvim" },
-            { "folke/neodev.nvim" }
+            {
+                "folke/neodev.nvim",
+                opts = {
+                    library = {
+                        plugins = {
+                            "nvim-dap-ui"
+                        },
+                        types = true
+                    }
+                },
+
+            }
         },
         config = function()
-            -- This is where all the LSP shenanigans will live
             local lsp_zero = require("lsp-zero")
             lsp_zero.extend_lspconfig()
 
-            --- if you want to know more about lsp-zero and mason.nvim
-            --- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
             lsp_zero.on_attach(function(client, bufnr)
-                -- see :help lsp-zero-keybindings
-                -- to learn the available actions
                 if (client.name == "clangd") then
                     lsp_zero.default_keymaps({
                         buffer = bufnr,
@@ -116,8 +121,7 @@ return {
                     require("clangd_extensions.inlay_hints").set_inlay_hints()
                 else
                     lsp_zero.default_keymaps({
-                        buffer = bufnr,
-                        preserve_mappings = false
+                        buffer = bufnr
                     })
                 end
             end)
@@ -143,6 +147,9 @@ return {
                                 Lua = {
                                     completion = {
                                         callSnippet = "Replace"
+                                    },
+                                    workspace = {
+                                        preloadFileSize = 1000
                                     }
                                 }
                             }
