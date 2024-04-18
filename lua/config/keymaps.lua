@@ -52,3 +52,6 @@ vim.keymap.set("t", "<C-k>", "<C-\\><C-N><C-w>k", { desc = "Move to upper window
 vim.keymap.set("t", "<C-l>", "<C-\\><C-N><C-w>l", { desc = "Move to right window from terminal mode" })
 
 vim.keymap.set("n", "<leader>p", "'A", { desc = "fredgroup autocmd: jump to previous buffer" })
+
+vim.keymap.set("n", "S-h", ":bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "S-l", ":bprev<CR>", { desc = "Prev buffer" })
