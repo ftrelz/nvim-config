@@ -7,3 +7,13 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.scrolloff = 8
 vim.opt.colorcolumn = "80"
 vim.opt.splitright = true
+
+--- :setlocal buftype=nofile
+--- :setlocal bufhidden=hide
+--- :setlocal noswapfile
+
+vim.api.nvim_create_user_command(
+  "Scratch",
+  "new +setlocal\\ buftype=nofile +setlocal\\ bufhidden=hide +setlocal\\ noswapfile",
+  {}
+)
