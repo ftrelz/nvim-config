@@ -7,6 +7,9 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.scrolloff = 8
 vim.opt.colorcolumn = "80"
 vim.opt.splitright = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.expandtab = true
 
 --- :setlocal buftype=nofile
 --- :setlocal bufhidden=hide
