@@ -1,6 +1,6 @@
 return {
-  "LazyVim/LazyVim",
-  opts = {
-    colorscheme = "catppuccin",
-  },
+  { "junegunn/seoul256.vim" },
+  { "LazyVim/LazyVim", opts = {
+    colorscheme = "seoul256",
+  } },
 }

@@ -40,9 +40,9 @@ vim.keymap.set(
   { desc = "Paste over highlighted word without replacing copy register contents" }
 )
 
-vim.keymap.set("n", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
-vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
-vim.keymap.set("n", "<leader>Y", '"+y', { desc = "Copy to system clipboard" })
+-- vim.keymap.set("n", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
+-- vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
+-- vim.keymap.set("n", "<leader>Y", '"+y', { desc = "Copy to system clipboard" })
 
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Escape terminal mode" })
 

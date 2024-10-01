@@ -11,10 +11,6 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.expandtab = true
 
---- :setlocal buftype=nofile
---- :setlocal bufhidden=hide
---- :setlocal noswapfile
-
 vim.api.nvim_create_user_command(
   "Scratch",
   "new +setlocal\\ buftype=nofile +setlocal\\ bufhidden=hide +setlocal\\ noswapfile",
