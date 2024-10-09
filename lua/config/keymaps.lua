@@ -40,9 +40,10 @@ vim.keymap.set(
   { desc = "Paste over highlighted word without replacing copy register contents" }
 )
 
--- vim.keymap.set("n", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
--- vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
--- vim.keymap.set("n", "<leader>Y", '"+y', { desc = "Copy to system clipboard" })
+vim.keymap.set("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", { desc = "Move to left tmux window" })
+vim.keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", { desc = "Move to right tmux window" })
+vim.keymap.set("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", { desc = "Move to lower tmux window" })
+vim.keymap.set("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", { desc = "Move to upper tmux window" })
 
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Escape terminal mode" })
 
@@ -53,5 +54,3 @@ vim.keymap.set("t", "<C-l>", "<C-\\><C-N><C-w>l", { desc = "Move to right window
 
 vim.keymap.set("n", "<leader>p", "'A", { desc = "fredgroup autocmd: jump to previous buffer" })
 
-vim.keymap.set("n", "S-h", ":bnext<CR>", { desc = "Next buffer" })
-vim.keymap.set("n", "S-l", ":bprev<CR>", { desc = "Prev buffer" })
